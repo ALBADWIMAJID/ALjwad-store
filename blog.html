@@ -2,12 +2,74 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مدونة - متجر سول</title>
-    <link rel="stylesheet" href="./css/grid.css">
-    <link rel="stylesheet" href="./css/app.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+        .blog-card {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card h3 {
+            font-size: 20px;
+            margin: 16px;
+            color: #333;
+        }
+
+        .blog-card p {
+            margin: 0 16px 16px;
+            color: #666;
+            font-size: 15px;
+            flex-grow: 1;
+        }
+
+        .blog-card .btn-outline {
+            margin: 0 16px 16px;
+            padding: 10px 20px;
+            border: 1px solid #d13f65;
+            color: #d13f65;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .blog-card .btn-outline:hover {
+            background-color: #d13f65;
+            color: white;
+        }
+
+        @media only screen and (max-width: 850px) {
+            .col-4 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -16,19 +78,19 @@
         <div class="container-fluid">
             <div class="nav">
                 <a href="index.html" class="logo">
-                    <img src="./images/logo.png" alt="Sol Store Logo">
+                    <img src="./images/logo.png" alt="Sol Store Logo" />
                 </a>
                 <ul class="nav-menu menu-main">
                     <li><a href="index.html">الرئيسية</a></li>
                     <li><a href="shop.html">تسوق</a></li>
-                    <li><a href="product.html">منتج</a></li>
-                    <li><a href="blog.html">مدونة</a></li>
+                    <li><a href="product.html">المنتجات</a></li>
+                    <li><a href="blog.html" class="active">المدونة</a></li>
                     <li><a href="about.html">معلومات عنا</a></li>
                 </ul>
                 <ul class="nav-menu">
-                    <li><a href="#"><i class='bx bx-search'></i></a></li>
-                    <li><a href="#"><i class='bx bx-shopping-bag'></i></a></li>
-                    <li><a href="#"><i class='bx bx-user'></i></a></li>
+                    <li><a href="#"><i class="bx bx-search"></i></a></li>
+                    <li><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+                    <li><a href="#"><i class="bx bx-user"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -42,33 +104,34 @@
             <div class="row">
                 <div class="col-4">
                     <div class="blog-card">
-                        <img src="images/blog/blog1.jpg" alt="article 1">
+                        <img src="images/blog/blog1.jpg" alt="article 1" />
                         <h3>نصائح لجمال طبيعي يومي</h3>
                         <p>اكتشفي كيف يمكنكِ الحفاظ على إطلالة مشرقة باستخدام مستحضرات تجميل طبيعية.</p>
-                        <a href="#" class="btn btn-outline">اقرأ المزيد</a>
+                        <a href="#" class="btn-outline">اقرأ المزيد</a>
                     </div>
                 </div>
+
                 <div class="col-4">
                     <div class="blog-card">
-                        <img src="images/blog/blog2.jpg" alt="article 2">
-                        <h3>أهم اتجاهات المكياج لصيف 2025</h3>
-                        <p>أحدث الألوان والصيحات التي تهيمن على منصات الجمال لهذا الموسم.</p>
-                        <a href="#" class="btn btn-outline">اقرأ المزيد</a>
+                        <img src="images/blog/blog2.jpg" alt="article 2" />
+                        <h3>اتجاهات المكياج لصيف 2025</h3>
+                        <p>تعرفي على أحدث الصيحات التي تهيمن على عالم الجمال هذا الموسم.</p>
+                        <a href="#" class="btn-outline">اقرأ المزيد</a>
                     </div>
                 </div>
+
                 <div class="col-4">
                     <div class="blog-card">
-                        <img src="images/blog/blog3.jpg" alt="article 3">
-                        <h3>كيف تختارين كريم الأساس المناسب</h3>
-                        <p>دليلك لاختيار الفاونديشن الذي يناسب بشرتكِ ويدوم طويلاً.</p>
-                        <a href="#" class="btn btn-outline">اقرأ المزيد</a>
+                        <img src="images/blog/blog3.jpg" alt="article 3" />
+                        <h3>اختيار كريم الأساس المثالي</h3>
+                        <p>نصائح مهمة لاختيار الفاونديشن المناسب لنوع بشرتك وتغطيته المثالية.</p>
+                        <a href="#" class="btn-outline">اقرأ المزيد</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- END BLOG SECTION -->
-
 </body>
 
 </html>

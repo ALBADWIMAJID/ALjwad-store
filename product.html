@@ -2,124 +2,40 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل المنتج - متجر سول</title>
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المنتجات - متجر سول</title>
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <style>
-        body {
-            margin: 0;
-            font-family: 'Cairo', sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
-        .nav-wrapper {
+        .filter-buttons button {
             background-color: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            flex-wrap: wrap;
-        }
-
-        .logo img {
-            width: 120px;
-        }
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            padding: 0;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #444;
-            font-weight: 500;
-        }
-
-        .section {
-            padding: 40px 10%;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .col-6 {
-            flex: 1 1 45%;
-        }
-
-        .product-detail-img img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .product-detail-info {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        .product-name {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .product-price {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .product-price del {
-            color: #888;
-        }
-
-        .main-color {
-            color: #d13f65;
-            font-weight: bold;
-        }
-
-        .product-description p {
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        .btn {
-            padding: 12px 25px;
-            margin-top: 15px;
-            background: #d13f65;
-            border: none;
-            color: white;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: all 0.3s;
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #d13f65;
-            color: #d13f65;
-            margin-right: 10px;
+        .filter-buttons button:hover,
+        .filter-buttons button.active {
+            background-color: #d13f65;
+            color: #fff;
+            border-color: #d13f65;
         }
 
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        @media(max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
+        .product-item {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
@@ -130,62 +46,134 @@
         <div class="container-fluid">
             <div class="nav">
                 <a href="index.html" class="logo">
-                    <img src="./images/logo.png" alt="Sol Store Logo">
+                    <img src="./images/logo.png" alt="Sol Store Logo" />
                 </a>
                 <ul class="nav-menu menu-main">
                     <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="shop.html">تسوق</a></li>
-                    <li><a href="#">منتج</a></li>
-                    <li><a href="#">مدونة</a></li>
-                    <li><a href="#">معلومات عنا</a></li>
+                    <li><a href="product.html" class="active">المنتجات</a></li>
+                    <li><a href="blog.html">المدونة</a></li>
+                    <li><a href="about.html">معلومات عنا</a></li>
                 </ul>
                 <ul class="nav-menu">
-                    <li><a href="#"><i class='bx bx-search'></i></a></li>
-                    <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
-                    <li><a href="#"><i class='bx bx-user'></i></a></li>
+                    <li><a href="#"><i class="bx bx-search"></i></a></li>
+                    <li><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+                    <li><a href="#"><i class="bx bx-user"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- END NAVIGATION -->
 
-    <!-- PRODUCT DETAIL -->
+    <!-- PRODUCTS SECTION -->
     <div class="section">
-        <div class="row">
-            <div class="col-6">
-                <div class="product-detail-img">
-                    <img src="images/products/Tom-Ford-RUBY-RUSH.png" alt="Tom Ford RUBY RUSH">
-                </div>
+        <div class="container-fluid">
+            <div class="section-header">
+                <span class="main-color">م</span>نتجاتنا
             </div>
-            <div class="col-6">
-                <div class="product-detail-info">
-                    <h2 class="product-name">Tom Ford RUBY RUSH</h2>
-                    <div class="product-price">
-                        <del>$130.00</del> <span class="main-color">$125.00</span>
-                    </div>
-                    <div class="product-description">
-                        <p>
-                            أحمر شفاه فاخر من توم فورد يمنحكِ إطلالة مثالية بلون جذاب وقوام مخملي يدوم طويلاً. مثالي
-                            للسهرات والمناسبات الخاصة.
-                        </p>
-                    </div>
-                    <div class="product-actions">
-                        <button class="btn btn-lg" onclick="addToCart()">أضف إلى السلة</button>
-                        <a href="shop.html" class="btn btn-outline">عودة للتسوق</a>
+
+            <!-- FILTER BUTTONS -->
+            <div class="filter-buttons">
+                <button class="active" data-category="all">الكل</button>
+                <button data-category="الشفاه">الشفاه</button>
+                <button data-category="العيون">العيون</button>
+                <button data-category="البشرة">البشرة</button>
+                <button data-category="العطور">العطور</button>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div class="row" id="product-list">
+
+                <!-- مثال على منتج من قسم الشفاه -->
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH.png);">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+                            <div class="product-price">
+                                <del>$130.00</del> <span class="main-color">$125.00</span>
+                            </div>
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn">عرض التفاصيل</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- مثال على منتج من قسم العطور -->
+                <div class="col-3 product-item" data-category="العطور">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/son-kem-ysl-425.png);">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">YSL</div>
+                            <div class="product-name">YSL 425</div>
+                            <div class="product-price">
+                                <del>$130.00</del> <span class="main-color">$125.00</span>
+                            </div>
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- منتجات إضافية لتجريب الفئات -->
+                <div class="col-3 product-item" data-category="العيون">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/eye-shadow.png);"></div>
+                        <div class="product-info">
+                            <div class="product-brand">Huda Beauty</div>
+                            <div class="product-name">Eye Palette</div>
+                            <div class="product-price">
+                                <span class="main-color">$85.00</span>
+                            </div>
+                            <div class="product-buttons">
+                                <a href="#" class="btn">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 product-item" data-category="البشرة">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/foundation.jpg);"></div>
+                        <div class="product-info">
+                            <div class="product-brand">NARS</div>
+                            <div class="product-name">Soft Matte</div>
+                            <div class="product-price">
+                                <span class="main-color">$65.00</span>
+                            </div>
+                            <div class="product-buttons">
+                                <a href="#" class="btn">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- END PRODUCT DETAIL -->
+    <!-- END PRODUCTS -->
 
     <script>
-        function addToCart() {
-            alert("تمت إضافة المنتج إلى السلة!");
-            // يمكنك ربطه بـ localStorage أو قاعدة بيانات لاحقًا
-        }
-    </script>
+        document.querySelectorAll('.filter-buttons button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
+                const category = button.getAttribute('data-category');
+                document.querySelectorAll('.product-item').forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

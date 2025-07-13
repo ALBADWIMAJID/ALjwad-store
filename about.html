@@ -2,12 +2,12 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>معلومات عنا - متجر سول</title>
-    <link rel="stylesheet" href="./css/grid.css">
-    <link rel="stylesheet" href="./css/app.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <style>
         .about-content {
             background-color: #fff;
@@ -42,6 +42,53 @@
         .about-content .btn:hover {
             background-color: #b83255;
         }
+
+        .about-stats {
+            margin-top: 40px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            flex: 1;
+            min-width: 180px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-box i {
+            font-size: 40px;
+            color: #d13f65;
+            margin-bottom: 10px;
+        }
+
+        .stat-box h4 {
+            font-size: 22px;
+            margin: 10px 0 5px;
+        }
+
+        .stat-box p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            .col-6 {
+                width: 100%;
+            }
+
+            .about-content {
+                margin-top: 30px;
+            }
+
+            .about-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -51,25 +98,18 @@
         <div class="container-fluid">
             <div class="nav">
                 <a href="index.html" class="logo">
-                    <img src="./images/logo.png" alt="شعار المتجر">
+                    <img src="./images/logo.png" alt="شعار المتجر" />
                 </a>
                 <ul class="nav-menu menu-main">
                     <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="shop.html">المتجر</a></li>
-                    <li><a href="product-details.html">المنتجات</a></li>
+                    <li><a href="product.html">المنتجات</a></li>
                     <li><a href="blog.html">المدونة</a></li>
-                    <li><a href="about.html">معلومات عنا</a></li>
+                    <li><a href="about.html" class="active">معلومات عنا</a></li>
                 </ul>
                 <ul class="nav-menu">
-                    <li>
-                        <a href="#"><i class='bx bx-search'></i></a>
-                    </li>
-                    <li>
-                        <a href="cart.html"><i class='bx bx-shopping-bag'></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class='bx bx-user'></i></a>
-                    </li>
+                    <li><a href="#"><i class="bx bx-search"></i></a></li>
+                    <li><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
+                    <li><a href="#"><i class="bx bx-user"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -83,25 +123,37 @@
                 <div class="col-6">
                     <div class="about-image">
                         <img src="./images/banner/andrey-zvyagintsev-XM8OXHhzOsU-unsplash.jpg" alt="من نحن"
-                            style="width: 100%; border-radius: 20px;">
+                            style="width: 100%; border-radius: 20px;" />
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="about-content">
                         <h2 class="section-header"><span class="main-color">من</span> نحن</h2>
-                        <p>
-                            متجر سول لمستحضرات التجميل هو وجهتك المفضلة للحصول على أفضل منتجات التجميل والعناية بالجمال
-                            من أشهر العلامات التجارية العالمية.
+                        <p>متجر سول هو بوابتكِ الأولى لعالم الجمال. نقدم لكِ منتجات مختارة بعناية من أفضل الماركات
+                            العالمية.</p>
+                        <p>نحن نؤمن بأن الجمال يبدأ من الجودة، ولهذا نهتم بكل تفاصيل تجربة التسوق الخاصة بك.</p>
+                        <p>فريقنا يعمل يوميًا على تحسين خدماتنا وتوفير كل جديد في عالم المكياج والعناية بالبشرة والعطور.
                         </p>
-                        <p>
-                            رؤيتنا هي تقديم منتجات عالية الجودة بأسعار منافسة، مع تجربة تسوق مريحة وآمنة تلبي توقعات
-                            عملائنا في كل مرة.
-                        </p>
-                        <p>
-                            نحن نسعى للابتكار والتجديد دائمًا لنواكب آخر صيحات الجمال العالمية ونوفر لعملائنا كل ما هو
-                            مميز واستثنائي.
-                        </p>
-                        <a href="shop.html" class="btn">تسوقي الآن</a>
+
+                        <div class="about-stats">
+                            <div class="stat-box">
+                                <i class="bx bxs-star"></i>
+                                <h4>+1000 تقييم</h4>
+                                <p>رضا العملاء هو هدفنا الأول</p>
+                            </div>
+                            <div class="stat-box">
+                                <i class="bx bx-globe"></i>
+                                <h4>7 دول</h4>
+                                <p>نخدم الوطن العربي بالكامل</p>
+                            </div>
+                            <div class="stat-box">
+                                <i class="bx bx-package"></i>
+                                <h4>+300 منتج</h4>
+                                <p>منتجات أصلية ومتجددة</p>
+                            </div>
+                        </div>
+
+                        <a href="product.html" class="btn" style="margin-top: 20px;">تسوقي الآن</a>
                     </div>
                 </div>
             </div>
