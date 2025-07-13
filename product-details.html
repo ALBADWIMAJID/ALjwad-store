@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج - سول ستور</title>
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #fdfdfd;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        .nav-wrapper {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #d13f65;
+        }
+
+        .section {
+            padding: 60px 10%;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .col-6 {
+            flex: 1 1 45%;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-detail {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .product-detail h1 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .rating i {
+            color: gold;
+            font-size: 18px;
+        }
+
+        .price {
+            margin: 20px 0;
+            font-size: 20px;
+        }
+
+        .price del {
+            color: #999;
+        }
+
+        .main-color {
+            color: #d13f65;
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lg {
+            background-color: #d13f65;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .btn-lg:hover {
+            background-color: #b83255;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #d13f65;
+            color: #d13f65;
+        }
+
+        .btn-outline:hover {
+            background-color: #d13f65;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- NAV -->
+<div class="nav-wrapper">
+    <div class="container-fluid">
+        <div class="nav">
+            <a href="index.html" class="logo">
+                <img src="./images/logo.png" alt="شعار المتجر">
+            </a>
+            <ul class="nav-menu menu-main">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="shop.html">المتجر</a></li>
+                <li><a href="product-details.html">المنتجات</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">معلومات عنا</a></li>
+            </ul>
+            <ul class="nav-menu">
+                <li>
+                    <a href="#"><i class='bx bx-search'></i></a>
+                </li>
+                <li>
+                    <a href="cart.html"><i class='bx bx-shopping-bag'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-user'></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- END NAV -->
+
+    <!-- PRODUCT DETAIL -->
+    <div class="section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <div class="product-gallery">
+                        <img src="images/products/Tom-Ford-RUBY-RUSH.png" alt="منتج" class="main-img">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="product-detail">
+                        <h1>أحمر شفاه توم فورد - روبي رش</h1>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                        </div>
+                        <div class="price">
+                            <del>$130.00</del> <span class="main-color">$125.00</span>
+                        </div>
+                        <p class="description">
+                            أحمر شفاه فاخر بلون جذاب وتركيبة ناعمة تدوم طويلاً. مثالي لكل الأوقات.
+                        </p>
+                        <div class="product-actions">
+                            <button class="btn btn-lg">أضف إلى السلة</button>
+                            <button class="btn btn-outline">إضافة للمفضلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PRODUCT DETAIL -->
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة المشتريات - متجر سول</title>
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .cart {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .cart-header,
+        .cart-item {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .cart-item {
+            font-weight: normal;
+        }
+
+        .cart-total {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .btn.btn-lg {
+            margin-top: 20px;
+            background-color: #d13f65;
+            color: white;
+            border-radius: 6px;
+            padding: 14px 28px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn.btn-lg:hover {
+            background-color: #b83255;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: #d13f65;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #b83255;
+        }
+
+        @media (max-width: 768px) {
+
+            .cart-header div,
+            .cart-item div {
+                font-size: 14px;
+            }
+
+            .btn.btn-lg {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV -->
+    <div class="nav-wrapper">
+        <div class="container-fluid">
+            <div class="nav">
+                <a href="index.html" class="logo">
+                    <img src="./images/logo.png" alt="Logo">
+                </a>
+                <ul class="nav-menu menu-main">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="shop.html">المتجر</a></li>
+                    <li><a href="product.html">المنتجات</a></li>
+                    <li><a href="blog.html">المدونة</a></li>
+                    <li><a href="about.html">معلومات عنا</a></li>
+                </ul>
+                <ul class="nav-menu">
+                    <li><a href="#"><i class='bx bx-search'></i></a></li>
+                    <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                    <li><a href="#"><i class='bx bx-user'></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END NAV -->
+
+    <!-- CART SECTION -->
+    <div class="section">
+        <div class="container-fluid">
+            <h2 class="section-header"><span class="main-color">س</span>لة المشتريات</h2>
+            <div class="cart">
+                <div class="cart-header">
+                    <div class="col-4">المنتج</div>
+                    <div class="col-2">السعر</div>
+                    <div class="col-2">الكمية</div>
+                    <div class="col-2">الإجمالي</div>
+                    <div class="col-2">إزالة</div>
+                </div>
+                <div class="cart-body" id="cart-items">
+                    <!-- سيتم تعبئة العناصر من الجافاسكربت -->
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>المجموع الكلي:</span>
+                        <strong id="cart-total">$0.00</strong>
+                    </div>
+                    <a href="checkout.html" class="btn btn-lg">إتمام الشراء</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END CART SECTION -->
+
+    <script>
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const container = document.getElementById("cart-items");
+        let total = 0;
+
+        cartItems.forEach((item, index) => {
+            const subtotal = item.price * item.qty;
+            total += subtotal;
+            container.innerHTML += `
+                <div class="cart-item">
+                    <div class="col-4">${item.name}</div>
+                    <div class="col-2">$${item.price}</div>
+                    <div class="col-2">${item.qty}</div>
+                    <div class="col-2">$${subtotal}</div>
+                    <div class="col-2"><button onclick="removeItem(${index})">حذف</button></div>
+                </div>
+            `;
+        });
+
+        document.getElementById("cart-total").textContent = `$${total.toFixed(2)}`;
+
+        function removeItem(index) {
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
