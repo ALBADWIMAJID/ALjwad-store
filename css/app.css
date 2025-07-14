@@ -74,7 +74,7 @@ a {
     align-items: center;
 }
 
-.nav-menu li ~ li {
+.nav-menu li~li {
     margin-left: 20px;
 }
 
@@ -156,7 +156,7 @@ a {
     visibility: visible;
 }
 
-.slide-info > div {
+.slide-info>div {
     overflow: hidden;
 }
 
@@ -308,12 +308,12 @@ a {
     overflow: hidden;
 }
 
-.product-action > * {
+.product-action>* {
     transform: translateY(-100%);
     transition: transform 0.4s ease 0s;
 }
 
-.product:hover .product-action > * {
+.product:hover .product-action>* {
     transform: translateY(0);
 }
 
@@ -321,7 +321,7 @@ a {
     padding: 0 15px;
 }
 
-.product-info > div {
+.product-info>div {
     padding-top: 15px;
 }
 
@@ -397,23 +397,23 @@ a {
     padding: 0 80px;
 }
 
-.special-product > * {
+.special-product>* {
     margin-top: 30px;
 }
 
-.special-product > .special-product-img {
+.special-product>.special-product-img {
     margin-top: 80px;
 }
 
-.special-product > span {
+.special-product>span {
     text-transform: uppercase;
 }
 
-.special-product > p {
+.special-product>p {
     color: var(--text-gray);
 }
 
-.special-product > h2 {
+.special-product>h2 {
     font-size: 3rem;
     text-transform: uppercase;
 }
@@ -514,4 +514,172 @@ footer {
 
 .copyright a:hover {
     color: var(--main-color);
+}
+
+
+
+
+/* ✅ START: responsive styles for mobile */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .menu-main {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        pointer-events: visible;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--body-bg);
+        margin-top: 10px;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 20px;
+    }
+
+    .nav-menu li a {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-section .row,
+    .hero-section .col-4,
+    .hero-section .col-8 {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .slide-info-wrapper,
+    .slide-img-wrapper {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .slide-img {
+        --size: 280px;
+        height: var(--size);
+        width: var(--size);
+        margin: auto;
+    }
+
+    .slide-info {
+        position: static;
+        transform: none;
+        left: unset;
+        text-align: center;
+    }
+
+    .slide-name h3 {
+        font-size: 2rem;
+    }
+
+    .slide-description {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .section-header {
+        font-size: 1.5rem;
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .special-product {
+        padding: 0 15px;
+    }
+
+    .special-product>h2 {
+        font-size: 2rem;
+    }
+
+    .product-info {
+        padding: 0;
+    }
+
+    footer,
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-list {
+        justify-content: center;
+    }
+
+    .special-product-img {
+        margin-top: 30px;
+    }
+
+    /* ✅ إصلاح الأعمدة */
+    .row {
+        flex-direction: column;
+    }
+
+    .col-4,
+    .col-3,
+    .col-5 {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* ✅ تحسين مظهر البانرات */
+    .banner {
+        margin: 10px 0;
+    }
+
+    .banner-text {
+        font-size: 1.2rem;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .banner-text .btn {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 🔹 إظهار أيقونة البرجر في الشاشات الصغيرة */
+.burger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 200;
+}
+
+/* 🔹 تنسيق الحاوية العامة */
+.container-fluid {
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: auto;
 }

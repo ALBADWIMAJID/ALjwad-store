@@ -42,26 +42,32 @@
 
 <body>
     <!-- NAVIGATION -->
-    <div class="nav-wrapper">
-        <div class="container-fluid">
-            <div class="nav">
-                <a href="index.html" class="logo">
-                    <img src="./images/logo.png" alt="Sol Store Logo" />
-                </a>
-                <ul class="nav-menu menu-main">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="product.html" class="active">المنتجات</a></li>
-                    <li><a href="blog.html">المدونة</a></li>
-                    <li><a href="about.html">معلومات عنا</a></li>
-                </ul>
-                <ul class="nav-menu">
-                    <li><a href="#"><i class="bx bx-search"></i></a></li>
-                    <li><a href="cart.html"><i class="bx bx-shopping-bag"></i></a></li>
-                    <li><a href="#"><i class="bx bx-user"></i></a></li>
-                </ul>
-            </div>
+    <div class="nav">
+        <a href="index.html" class="logo">
+            <img src="./images/logo.png" alt="Sol Store Logo">
+        </a>
+    
+        <!-- BURGER ICON -->
+        <div class="burger" onclick="toggleMenu()">
+            <i class='bx bx-menu'></i>
         </div>
+    
+        <!-- MAIN MENU -->
+        <ul class="nav-menu menu-main" id="mainMenu">
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li><a href="shop.html">المتجر</a></li>
+            <li><a href="product.html">المنتجات</a></li>
+            <li><a href="blog.html">المدونة</a></li>
+            <li><a href="about.html">معلومات عنا</a></li>
+        </ul>
+    
+        <ul class="nav-menu" id="userMenu">
+            <li><a href="#"><i class='bx bx-search'></i></a></li>
+            <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+            <li><a href="#"><i class='bx bx-user'></i></a></li>
+        </ul>
     </div>
+
     <!-- END NAVIGATION -->
 
     <!-- PRODUCTS SECTION -->
