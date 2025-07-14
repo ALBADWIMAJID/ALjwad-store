@@ -7,11 +7,138 @@
     <title>سلة المشتريات - متجر سول</title>
     <link rel="stylesheet" href="./css/grid.css">
     <link rel="stylesheet" href="./css/app.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/boxicons @2.1.4/dist/boxicons.esm.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* NAV Styles */
+        .header {
+            background-color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-menu.menu-main {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu.menu-main li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-icons a {
+            color: #333;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-icons a:hover {
+            color: #d13f65;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-nav {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                width: 100%;
+                padding-top: 10px;
+                border-top: 1px solid #eee;
+            }
+
+            .main-nav.active {
+                display: flex;
+            }
+
+            .nav-menu.menu-main {
+                flex-direction: column;
+                align-items: right;
+                gap: 10px;
+            }
+
+            .nav-icons {
+                justify-content: flex-end;
+            }
+        }
+
+        /* Cart Styles */
+        .section {
+            padding: 20px;
+        }
+
+        .container-fluid {
+            max-width: 1200px;
+            margin: auto;
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        .section-header {
+            text-align: right;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .main-color {
+            color: #d13f65;
+        }
+
         .cart {
             background: #fff;
-            padding: 40px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
         }
@@ -23,19 +150,45 @@
             font-weight: bold;
             border-bottom: 1px solid #eee;
             padding: 15px 0;
+            flex-wrap: wrap;
         }
 
         .cart-item {
             font-weight: normal;
         }
 
+        .cart-header div,
+        .cart-item div {
+            padding: 5px 10px;
+            text-align: center;
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .cart-header div,
+            .cart-item div {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+
+            .col-4 {
+                flex: 0 0 40%;
+            }
+
+            .col-2 {
+                flex: 0 0 20%;
+            }
+        }
+
         .cart-total {
-            text-align: left;
+            text-align: right;
             margin-top: 20px;
             font-size: 18px;
         }
 
         .btn.btn-lg {
+            width: 100%;
             margin-top: 20px;
             background-color: #d13f65;
             color: white;
@@ -56,49 +209,52 @@
             border: none;
             color: #d13f65;
             cursor: pointer;
+            font-size: 16px;
         }
 
         button:hover {
             color: #b83255;
         }
 
-        @media (max-width: 768px) {
-
-            .cart-header div,
-            .cart-item div {
-                font-size: 14px;
-            }
-
-            .btn.btn-lg {
-                width: 100%;
-            }
+        .cart-footer {
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
+
     <!-- NAV -->
-    <div class="nav-wrapper">
+    <header class="header">
         <div class="container-fluid">
             <div class="nav">
                 <a href="index.html" class="logo">
                     <img src="./images/logo.png" alt="Logo">
                 </a>
-                <ul class="nav-menu menu-main">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="shop.html">المتجر</a></li>
-                    <li><a href="product.html">المنتجات</a></li>
-                    <li><a href="blog.html">المدونة</a></li>
-                    <li><a href="about.html">معلومات عنا</a></li>
-                </ul>
-                <ul class="nav-menu">
-                    <li><a href="#"><i class='bx bx-search'></i></a></li>
-                    <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
-                    <li><a href="#"><i class='bx bx-user'></i></a></li>
-                </ul>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class='bx bx-menu'></i>
+                </button>
+
+                <!-- Navigation Menus -->
+                <nav class="main-nav" id="main-nav">
+                    <ul class="nav-menu menu-main">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="shop.html">المتجر</a></li>
+                        <li><a href="product.html">المنتجات</a></li>
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="about.html">معلومات عنا</a></li>
+                    </ul>
+                    <ul class="nav-menu nav-icons">
+                        <li><a href="#"><i class='bx bx-search'></i></a></li>
+                        <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                        <li><a href="#"><i class='bx bx-user'></i></a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </div>
+    </header>
     <!-- END NAV -->
 
     <!-- CART SECTION -->
@@ -154,7 +310,13 @@
             localStorage.setItem('cart', JSON.stringify(cartItems));
             location.reload();
         }
+
+        // Toggle mobile menu
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
     </script>
+
 </body>
 
 </html>
