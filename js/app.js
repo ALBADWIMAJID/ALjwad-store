@@ -90,12 +90,24 @@ document.querySelector('.hero-section').onmouseleave = () => {
 document.querySelectorAll('.products-slide').forEach(e => {
     new Glide(e.querySelector('.glide'), {
         type: 'slider',
-        starAt: 0,
-        perView: 4,
+        startAt: 0,
+        perView: 4, // ✅ يعرض 4 منتجات على الكمبيوتر
+        gap: 30,
         rewind: false,
-        bound: true
+        bound: true,
+        direction: 'rtl', // ✅ هذا هو السطر المهم لدعم اللغة العربية
+        breakpoints: {
+            1024: {
+                perView: 2 // ✅ على التابلت يعرض 2
+            },
+            768: {
+                perView: 1 // ✅ على الجوال يعرض 1
+            }
+        }
     }).mount()
 })
+
+        
 
 document.querySelectorAll('.product-img').forEach(e => {
     e.style.width = e.parentElement.offsetWidth + 'px'

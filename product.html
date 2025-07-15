@@ -41,34 +41,35 @@
 </head>
 
 <body>
-    <!-- NAVIGATION -->
-    <div class="nav">
-        <a href="index.html" class="logo">
-            <img src="./images/logo.png" alt="Sol Store Logo">
-        </a>
+    <div class="nav-wrapper">
+        <div class="nav">
+            <a href="index.html" class="logo">
+                <img src="./images/logo.png" alt="شعار المتجر">
+            </a>
     
-        <!-- BURGER ICON -->
-        <div class="burger" onclick="toggleMenu()">
-            <i class='bx bx-menu'></i>
+            <div class="burger" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </div>
+    
+            <!-- ✅ قائمة المستخدم أولًا -->
+            <ul class="nav-menu" id="userMenu">
+                <li><a href="#"><i class='bx bx-search'></i></a></li>
+                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a href="#"><i class='bx bx-user'></i></a></li>
+            </ul>
+    
+            <!-- ✅ ثم قائمة الصفحات -->
+            <ul class="nav-menu menu-main" id="mainMenu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="product.html">المنتجات</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">معلومات عنا</a></li>
+            </ul>
         </div>
-    
-        <!-- MAIN MENU -->
-        <ul class="nav-menu menu-main" id="mainMenu">
-            <li><a href="index.html" class="active">الرئيسية</a></li>
-            <li><a href="shop.html">المتجر</a></li>
-            <li><a href="product.html">المنتجات</a></li>
-            <li><a href="blog.html">المدونة</a></li>
-            <li><a href="about.html">معلومات عنا</a></li>
-        </ul>
-    
-        <ul class="nav-menu" id="userMenu">
-            <li><a href="#"><i class='bx bx-search'></i></a></li>
-            <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
-            <li><a href="#"><i class='bx bx-user'></i></a></li>
-        </ul>
     </div>
 
-    <!-- END NAVIGATION -->
+    <!-- ✅ END NAVIGATION ✅ -->
+
 
     <!-- PRODUCTS SECTION -->
     <div class="section">
@@ -181,5 +182,11 @@
         });
     </script>
 </body>
+<script>
+    function toggleMenu() {
+        document.getElementById('mainMenu').classList.toggle('show');
+        document.getElementById('userMenu').classList.toggle('show');
+    }
+</script>
 
 </html>

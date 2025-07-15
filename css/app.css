@@ -518,8 +518,44 @@ footer {
 
 
 
+/* ✅ إظهار زر البرجر فقط في الشاشات الصغيرة */
+.burger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 200;
+}
 
-/* ✅ START: responsive styles for mobile */
+/* ✅ قائمة التنقل الأساسية: مخفية في الجوال */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--body-bg);
+    padding: 10px 0;
+    /* ❌ إزالة الخط الفاصل */
+    /* border-top: 1px solid #ddd; */
+    position: absolute;
+    top: var(--nav-size);
+    right: 0;
+    z-index: 1000;
+}
+
+/* ✅ إظهار القائمة عند تفعيل show */
+.nav-menu.show {
+    display: flex !important;
+}
+
+/* ✅ عناصر القائمة */
+.nav-menu li {
+    margin: 10px 30px;
+}
+
+.nav-menu li a {
+    font-size: 1rem;
+}
+
+/* ✅ تنسيق خاص بالجوال */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
@@ -528,55 +564,16 @@ footer {
         padding: 10px 20px;
     }
 
-    .menu-main {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        pointer-events: visible;
-    }
-
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--body-bg);
-        margin-top: 10px;
-        padding: 10px 0;
-        border-top: 1px solid #ddd;
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-
-    .nav-menu li {
-        margin: 10px 20px;
-    }
-
-    .nav-menu li a {
-        font-size: 1rem;
-    }
-
     .logo img {
         height: 35px;
     }
 
-    .hero-section {
-        flex-direction: column;
-        height: auto;
-    }
-
+    .hero-section,
     .hero-section .row,
     .hero-section .col-4,
     .hero-section .col-8 {
-        height: auto;
         flex-direction: column;
-    }
-
-    .slide-info-wrapper,
-    .slide-img-wrapper {
-        padding: 20px;
-        text-align: center;
+        height: auto;
     }
 
     .slide-img {
@@ -589,7 +586,6 @@ footer {
     .slide-info {
         position: static;
         transform: none;
-        left: unset;
         text-align: center;
     }
 
@@ -627,20 +623,6 @@ footer {
         padding: 0;
     }
 
-    footer,
-    .footer-content {
-        text-align: center;
-    }
-
-    .social-list {
-        justify-content: center;
-    }
-
-    .special-product-img {
-        margin-top: 30px;
-    }
-
-    /* ✅ إصلاح الأعمدة */
     .row {
         flex-direction: column;
     }
@@ -652,7 +634,6 @@ footer {
         max-width: 100%;
     }
 
-    /* ✅ تحسين مظهر البانرات */
     .banner {
         margin: 10px 0;
     }
@@ -668,18 +649,118 @@ footer {
         font-size: 0.9rem;
     }
 }
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-/* 🔹 إظهار أيقونة البرجر في الشاشات الصغيرة */
-.burger {
-    display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 200;
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--body-bg);
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        position: static;
+    }
+
+    .nav-menu.show {
+        display: flex !important;
+    }
+
+    #userMenu.show {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #userMenu.show li {
+        margin: 0 10px;
+    }
+
+    #userMenu.show li a i {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--body-bg);
+        padding: 10px 0;
+        border-top: 1px solid #ffffff;
+        position: static;
+    }
+
+    .nav-menu.show {
+        display: flex !important;
+    }
+
+    #userMenu.show {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #userMenu.show li {
+        margin: 0 10px;
+    }
+
+    #userMenu.show li a i {
+        font-size: 1.5rem;
+    }
 }
 
-/* 🔹 تنسيق الحاوية العامة */
-.container-fluid {
-    padding: 0 30px;
-    max-width: 1200px;
-    margin: auto;
+/* ✅ عرض القائمة أفقياً على الكمبيوتر */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+        position: static;
+    }
+
+    .nav-menu li {
+        margin: 0 10px;
+    }
+
+    .burger {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    #userMenu.show {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: transparent;
+        width: 100%;
+        padding: 0 10px;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    #userMenu.show li {
+        margin: 0;
+    }
+
+    #userMenu.show li a i {
+        font-size: 1.5rem;
+        color: var(--text-color);
+    }
 }
