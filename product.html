@@ -34,6 +34,35 @@
             border-color: #d13f65;
         }
 
+        .product-img {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .product-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .product-type {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .product-rating {
+            margin-top: auto;
+            color: gold;
+        }
+
         .product-item {
             transition: all 0.3s ease;
         }
@@ -41,24 +70,23 @@
 </head>
 
 <body>
+    <!-- NAV -->
     <div class="nav-wrapper">
         <div class="nav">
             <a href="index.html" class="logo">
                 <img src="./images/logo.png" alt="شعار المتجر">
             </a>
-    
+
             <div class="burger" onclick="toggleMenu()">
                 <i class='bx bx-menu'></i>
             </div>
-    
-            <!-- ✅ قائمة المستخدم أولًا -->
+
             <ul class="nav-menu" id="userMenu">
                 <li><a href="#"><i class='bx bx-search'></i></a></li>
                 <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
                 <li><a href="#"><i class='bx bx-user'></i></a></li>
             </ul>
-    
-            <!-- ✅ ثم قائمة الصفحات -->
+
             <ul class="nav-menu menu-main" id="mainMenu">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="product.html">المنتجات</a></li>
@@ -67,9 +95,7 @@
             </ul>
         </div>
     </div>
-
-    <!-- ✅ END NAVIGATION ✅ -->
-
+    <!-- END NAV -->
 
     <!-- PRODUCTS SECTION -->
     <div class="section">
@@ -78,93 +104,1594 @@
                 <span class="main-color">م</span>نتجاتنا
             </div>
 
-            <!-- FILTER BUTTONS -->
             <div class="filter-buttons">
                 <button class="active" data-category="all">الكل</button>
                 <button data-category="الشفاه">الشفاه</button>
                 <button data-category="العيون">العيون</button>
                 <button data-category="البشرة">البشرة</button>
+                <button data-category="الشعر">الشعر</button>
                 <button data-category="العطور">العطور</button>
+                <button data-category="المكياج">المكياج</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="الشعر">الشعر</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="المكياج">المكياج</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="الشعر">الشعر</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="المكياج">المكياج</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="الشعر">الشعر</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="المكياج">المكياج</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="الشعر">الشعر</button>
+                <button data-category="العطور">العطور</button>
+                <button data-category="العطور">العطور</button>`
             </div>
 
-            <!-- PRODUCT GRID -->
             <div class="row" id="product-list">
 
-                <!-- مثال على منتج من قسم الشفاه -->
                 <div class="col-3 product-item" data-category="الشفاه">
                     <div class="product">
-                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH.png);">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم 4%</div>
+                            </div>
                         </div>
                         <div class="product-info">
                             <div class="product-brand">Tom Ford</div>
                             <div class="product-name">RUBY RUSH</div>
-                            <div class="product-price">
-                                <del>$130.00</del> <span class="main-color">$125.00</span>
+                
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58)</span>
                             </div>
+                
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+                
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+                
                             <div class="product-buttons">
-                                <a href="product-details.html" class="btn">عرض التفاصيل</a>
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- مثال على منتج من قسم العطور -->
-                <div class="col-3 product-item" data-category="العطور">
+                <div class="col-3 product-item" data-category="الشفاه">
                     <div class="product">
-                        <div class="product-img" style="background-image: url(images/products/son-kem-ysl-425.png);">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم 4%</div>
+                            </div>
                         </div>
                         <div class="product-info">
-                            <div class="product-brand">YSL</div>
-                            <div class="product-name">YSL 425</div>
-                            <div class="product-price">
-                                <del>$130.00</del> <span class="main-color">$125.00</span>
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+                
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58)</span>
                             </div>
+                
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+                
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+                
                             <div class="product-buttons">
-                                <a href="product-details.html" class="btn">عرض التفاصيل</a>
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- منتجات إضافية لتجريب الفئات -->
-                <div class="col-3 product-item" data-category="العيون">
+                <div class="col-3 product-item" data-category="الشفاه">
                     <div class="product">
-                        <div class="product-img" style="background-image: url(images/products/eye-shadow.png);"></div>
-                        <div class="product-info">
-                            <div class="product-brand">Huda Beauty</div>
-                            <div class="product-name">Eye Palette</div>
-                            <div class="product-price">
-                                <span class="main-color">$85.00</span>
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم 4%</div>
                             </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+                
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58)</   span>
+                            </div>
+                
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+                
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+                
                             <div class="product-buttons">
-                                <a href="#" class="btn">عرض التفاصيل</a>
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-3 product-item" data-category="البشرة">
+                <div class="col-3 product-item" data-category="الشفاه">
                     <div class="product">
-                        <div class="product-img" style="background-image: url(images/products/foundation.jpg);"></div>
-                        <div class="product-info">
-                            <div class="product-brand">NARS</div>
-                            <div class="product-name">Soft Matte</div>
-                            <div class="product-price">
-                                <span class="main-color">$65.00</span>
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
                             </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+                
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</   span>
+                            </div>
+                
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+                
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+                
                             <div class="product-buttons">
-                                <a href="#" class="btn">عرض التفاصيل</a>
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+                
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</   span>
+                            </div>
+                
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+                
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+                
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
 
-            </div>
-        </div>
-    </div>
-    <!-- END PRODUCTS -->
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
 
-    <script>
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 product-item" data-category="الشفاه">
+                    <div class="product">
+                        <div class="product-img" style="background-image: url(images/products/Tom-Ford-RUBY-RUSH-2.png);">
+                            <div class="product-labels">
+                                <span class="badge badge-new">جديد</span>
+                                <span class="badge badge-category">شفاه</span>
+                                <div class="product-discount">خصم   4%</div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-brand">Tom Ford</div>
+                            <div class="product-name">RUBY RUSH</div>
+
+                            <div class="product-rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                                <span class="rating-count">(58 )</span>
+                            </div>
+
+                            <div class="product-price">
+                                <del>$130.00</del>
+                                <span class="main-color">$125.00</span>
+                            </div>
+
+                            <div class="product-description">
+                                أحمر شفاه فخم بتركيبة ناعمة ولون جريء يدوم طويلًا.
+                            </div>
+
+                            <div class="product-buttons">
+                                <a href="product-details.html" class="btn btn-outline">عرض التفاصيل</a>
+                                <button class="btn btn-main">أضف إلى السلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <script>
         document.querySelectorAll('.filter-buttons button').forEach(button => {
             button.addEventListener('click', () => {
                 document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
@@ -172,21 +1699,16 @@
 
                 const category = button.getAttribute('data-category');
                 document.querySelectorAll('.product-item').forEach(item => {
-                    if (category === 'all' || item.dataset.category === category) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
+                    item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
                 });
             });
         });
+
+        function toggleMenu() {
+            document.getElementById('mainMenu').classList.toggle('show');
+            document.getElementById('userMenu').classList.toggle('show');
+        }
     </script>
 </body>
-<script>
-    function toggleMenu() {
-        document.getElementById('mainMenu').classList.toggle('show');
-        document.getElementById('userMenu').classList.toggle('show');
-    }
-</script>
 
 </html>

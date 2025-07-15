@@ -127,3 +127,4 @@ new Glide('.gallery-slide', {
     starAt: 0,
     perView: 8,
 }).mount()
+

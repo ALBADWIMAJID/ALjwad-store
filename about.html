@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./css/app.css" />
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <style>
+        .about-section {
+            padding: 60px 0;
+        }
+
         .about-content {
             background-color: #fff;
             padding: 40px;
@@ -46,13 +50,12 @@
         .about-stats {
             margin-top: 40px;
             display: flex;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
         .stat-box {
-            flex: 1;
-            min-width: 180px;
+            flex: 1 1 250px;
             background-color: #f8f8f8;
             padding: 20px;
             border-radius: 12px;
@@ -75,7 +78,7 @@
             font-size: 14px;
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 768px) {
             .col-6 {
                 width: 100%;
             }
@@ -83,51 +86,36 @@
             .about-content {
                 margin-top: 30px;
             }
-
-            .about-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
         }
     </style>
 </head>
-<script>
-    function toggleMenu() {
-        document.getElementById('mainMenu').classList.toggle('show');
-        document.getElementById('userMenu').classList.toggle('show');
-    }
-</script>
 
 <body>
-<div class="nav-wrapper">
-    <div class="nav">
-        <a href="index.html" class="logo">
-            <img src="./images/logo.png" alt="شعار المتجر">
-        </a>
-
-        <div class="burger" onclick="toggleMenu()">
-            <i class='bx bx-menu'></i>
+    <!-- NAVIGATION -->
+    <div class="nav-wrapper">
+        <div class="nav">
+            <a href="index.html" class="logo">
+                <img src="./images/logo.png" alt="شعار المتجر">
+            </a>
+            <div class="burger" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </div>
+            <ul class="nav-menu" id="userMenu">
+                <li><a href="#"><i class='bx bx-search'></i></a></li>
+                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a href="#"><i class='bx bx-user'></i></a></li>
+            </ul>
+            <ul class="nav-menu menu-main" id="mainMenu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="product.html">المنتجات</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">معلومات عنا</a></li>
+            </ul>
         </div>
-
-        <!-- ✅ قائمة المستخدم أولًا -->
-        <ul class="nav-menu" id="userMenu">
-            <li><a href="#"><i class='bx bx-search'></i></a></li>
-            <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
-            <li><a href="#"><i class='bx bx-user'></i></a></li>
-        </ul>
-
-        <!-- ✅ ثم قائمة الصفحات -->
-        <ul class="nav-menu menu-main" id="mainMenu">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="product.html">المنتجات</a></li>
-            <li><a href="blog.html">المدونة</a></li>
-            <li><a href="about.html">معلومات عنا</a></li>
-        </ul>
     </div>
-</div>
 
     <!-- ABOUT SECTION -->
-    <div class="section">
+    <div class="section about-section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6">
@@ -169,7 +157,13 @@
             </div>
         </div>
     </div>
-    <!-- END ABOUT SECTION -->
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mainMenu').classList.toggle('show');
+            document.getElementById('userMenu').classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>
