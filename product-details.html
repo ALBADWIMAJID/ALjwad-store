@@ -2,108 +2,86 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل المنتج - سول ستور</title>
-    <link rel="stylesheet" href="./css/grid.css">
-    <link rel="stylesheet" href="./css/app.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تفاصيل المنتج - متجر سول</title>
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: #fdfdfd;
-            margin: 0;
-            padding: 0;
-            color: #222;
-        }
-
-        .nav-wrapper {
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #444;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: #d13f65;
-        }
-
         .section {
             padding: 60px 10%;
+            background-color: #fafafa;
         }
-
+    
         .row {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
         }
-
+    
         .col-6 {
-            flex: 1 1 45%;
+            flex: 1 1 48%;
         }
-
-        .product-gallery img {
-            width: 100%;
+    
+        .product-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         }
-
+    
+        .product-gallery img {
+            max-width: 100%;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+    
         .product-detail {
             background-color: #fff;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-
+    
         .product-detail h1 {
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 15px;
+            color: #222;
         }
-
-        .rating i {
-            color: gold;
-            font-size: 18px;
-        }
-
+    
         .price {
             margin: 20px 0;
             font-size: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
-
+    
         .price del {
             color: #999;
+            font-size: 16px;
         }
-
+    
         .main-color {
             color: #d13f65;
             font-weight: bold;
+            font-size: 20px;
         }
-
+    
         .description {
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
         }
-
+    
         .btn {
             padding: 14px 24px;
             border: none;
@@ -111,113 +89,224 @@
             cursor: pointer;
             font-size: 15px;
             transition: all 0.3s ease;
+            margin-left: 10px;
         }
-
+    
         .btn-lg {
             background-color: #d13f65;
             color: #fff;
-            margin-left: 10px;
         }
-
+    
         .btn-lg:hover {
             background-color: #b83255;
         }
-
+    
         .btn-outline {
-            background-color: transparent;
             border: 2px solid #d13f65;
+            background: transparent;
             color: #d13f65;
         }
-
+    
         .btn-outline:hover {
             background-color: #d13f65;
-            color: #fff;
+            color: white;
         }
-
+    
         @media (max-width: 768px) {
             .row {
                 flex-direction: column;
             }
-
-            .nav {
-                flex-direction: column;
-                gap: 10px;
+    
+            .col-6 {
+                width: 100%;
             }
-
-            .nav-menu {
+    
+            .product-detail h1 {
+                font-size: 22px;
+            }
+    
+            .price {
+                font-size: 18px;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
+            }
+    
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+                text-align: center;
             }
         }
     </style>
-</head>
 
+</head>
+<script>
+    document.querySelectorAll('.filter-buttons button').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const category = button.getAttribute('data-category');
+            document.querySelectorAll('.product-item').forEach(item => {
+                item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
+            });
+        });
+    });
+
+    function toggleMenu() {
+        document.getElementById('mainMenu').classList.toggle('show');
+        document.getElementById('userMenu').classList.toggle('show');
+    }
+</script>
 <body>
-<!-- NAV -->
-<div class="nav-wrapper">
-    <div class="container-fluid">
+    <!-- NAVIGATION -->
+    <div class="nav-wrapper">
         <div class="nav">
             <a href="index.html" class="logo">
                 <img src="./images/logo.png" alt="شعار المتجر">
             </a>
-            <ul class="nav-menu menu-main">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="shop.html">المتجر</a></li>
-                <li><a href="product-details.html">المنتجات</a></li>
-                <li><a href="blog.html">المدونة</a></li>
-                <li><a href="about.html">معلومات عنا</a></li>
+            <div class="burger" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </div>
+            <ul class="nav-menu" id="userMenu">
+                <li><a href="#"><i class='bx bx-search'></i></a></li>
+                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a href="#"><i class='bx bx-user'></i></a></li>
             </ul>
-            <ul class="nav-menu">
-                <li>
-                    <a href="#"><i class='bx bx-search'></i></a>
-                </li>
-                <li>
-                    <a href="cart.html"><i class='bx bx-shopping-bag'></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class='bx bx-user'></i></a>
-                </li>
+            <ul class="nav-menu menu-main" id="mainMenu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="product.html">المنتجات</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html" class="active">معلومات عنا</a></li>
             </ul>
         </div>
     </div>
-</div>
-<!-- END NAV -->
-
     <!-- PRODUCT DETAIL -->
     <div class="section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6">
                     <div class="product-gallery">
-                        <img src="images/products/Tom-Ford-RUBY-RUSH.png" alt="منتج" class="main-img">
+                        <img id="product-img" src="" alt="صورة المنتج">
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="product-detail">
-                        <h1>أحمر شفاه توم فورد - روبي رش</h1>
-                        <div class="rating">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star-half'></i>
-                        </div>
+                        <h1 id="product-name">اسم المنتج</h1>
                         <div class="price">
-                            <del>$130.00</del> <span class="main-color">$125.00</span>
+                            <del id="old-price"></del>
+                            <span class="main-color" id="new-price"></span>
                         </div>
-                        <p class="description">
-                            أحمر شفاه فاخر بلون جذاب وتركيبة ناعمة تدوم طويلاً. مثالي لكل الأوقات.
-                        </p>
+                        <p class="description" id="product-description"></p>
                         <div class="product-actions">
                             <button class="btn btn-lg">أضف إلى السلة</button>
-                            <button class="btn btn-outline">إضافة للمفضلة</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- END PRODUCT DETAIL -->
+
+    <script>
+        const products = [
+            {
+                id: "1",
+                name: "RUBY RUSH",
+                brand: "Tom Ford",
+                image: "images/products/Tom-Ford-RUBY-RUSH-2.png",
+                price: 125,
+                oldPrice: 130,
+                description: "أحمر شفاه فاخر بلون جذاب وتركيبة ناعمة تدوم طويلاً."
+            },
+            {
+                id: "2",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            },
+            {
+                id: "3",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            },
+            {
+                id: "4",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            },
+            {
+                id: "5",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            },
+            {
+                id: "6",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            },
+            {
+                id: "7",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            },
+            {
+                id: "8",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            },
+            {
+                id: "9",
+                name: "YSL 425",
+                brand: "YSL",
+                image: "images/products/son-kem-ysl-425.png",
+                price: 125,
+                oldPrice: 130,
+                description: "روج فاخر من YSL يمنحك مظهرًا أنيقًا وثابتًا طوال اليوم."
+            }
+        ];
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id");
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            document.getElementById("product-img").src = product.image;
+            document.getElementById("product-name").textContent = product.name;
+            document.getElementById("old-price").textContent = `$${product.oldPrice}`;
+            document.getElementById("new-price").textContent = `$${product.price}`;
+            document.getElementById("product-description").textContent = product.description;
+        } else {
+            document.querySelector(".product-detail").innerHTML = "<h2>المنتج غير موجود</h2>";
+        }
+    </script>
 </body>
 
 </html>

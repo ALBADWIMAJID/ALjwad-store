@@ -7,128 +7,92 @@
     <title>سلة المشتريات - متجر سول</title>
     <link rel="stylesheet" href="./css/grid.css">
     <link rel="stylesheet" href="./css/app.css">
-    <script type="module" src="https://unpkg.com/boxicons @2.1.4/dist/boxicons.esm.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
-            padding: 0;
             background-color: #f9f9f9;
         }
 
-        /* NAV Styles */
-        .header {
+        .nav-wrapper {
             background-color: #fff;
-            padding: 10px 0;
+            padding: 10px 20px;
             position: sticky;
             top: 0;
-            z-index: 999;
+            z-index: 1000;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         }
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+         
+
 
         .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 0 20px;
         }
 
         .logo img {
-            height: 40px;
+            height: 100px;
         }
 
-        .menu-toggle {
+        .burger {
             display: none;
-            background: transparent;
-            border: none;
+            font-size: 24px;
             cursor: pointer;
         }
 
-        .main-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .nav-menu.menu-main {
-            display: flex;
-            gap: 20px;
+        .nav-menu {
             list-style: none;
+            display: flex;
+            gap: 5px;
             padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
         }
 
-        .nav-menu.menu-main li a {
+        .nav-menu li a {
             text-decoration: none;
             color: #333;
-            font-weight: bold;
-        }
-
-        .nav-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-icons a {
-            color: #333;
-            font-size: 20px;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .nav-icons a:hover {
+        .nav-menu li a:hover {
             color: #d13f65;
         }
 
         @media (max-width: 768px) {
-            .menu-toggle {
+            .burger {
                 display: block;
             }
 
-            .main-nav {
+            .nav-menu {
                 display: none;
                 flex-direction: column;
-                background: #fff;
                 width: 100%;
-                padding-top: 10px;
-                border-top: 1px solid #eee;
+                background-color: #fff;
+                margin-top: 10px;
+                padding: 10px;
+                border-top: none
             }
 
-            .main-nav.active {
+            .nav-menu.show {
                 display: flex;
             }
-
-            .nav-menu.menu-main {
-                flex-direction: column;
-                align-items: right;
-                gap: 10px;
-            }
-
-            .nav-icons {
-                justify-content: flex-end;
-            }
         }
 
-        /* Cart Styles */
         .section {
-            padding: 20px;
-        }
-
-        .container-fluid {
-            max-width: 1200px;
-            margin: auto;
-            width: 100%;
-            padding: 0 15px;
+            padding: 30px 20px;
         }
 
         .section-header {
-            text-align: right;
             font-size: 24px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
@@ -137,186 +101,286 @@
         }
 
         .cart {
-            background: #fff;
+            background-color: #ffffff;
+            border-radius: 10px;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
         }
 
         .cart-header,
         .cart-item {
             display: flex;
-            align-items: center;
-            font-weight: bold;
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
             flex-wrap: wrap;
+            padding: 15px 0;
+            border-bottom: 2px solid #ebc907;
+            align-items: center;
         }
 
-        .cart-item {
-            font-weight: normal;
+        .cart-header {
+            font-weight: bold;
+        }
+
+        .cart-item img {
+            max-width: 60px;
+            border-radius: 6px;
         }
 
         .cart-header div,
         .cart-item div {
-            padding: 5px 10px;
-            text-align: center;
             flex: 1 1 100%;
-            max-width: 100%;
+            text-align: center;
         }
 
         @media (min-width: 768px) {
+
             .cart-header div,
             .cart-item div {
-                flex: 1 1 auto;
-                text-align: center;
+                flex: 1 1 20%;
             }
 
-            .col-4 {
-                flex: 0 0 40%;
-            }
-
-            .col-2 {
-                flex: 0 0 20%;
+            .cart-header .col-4,
+            .cart-item .col-4 {
+                flex: 1 1 40%;
             }
         }
 
-        .cart-total {
-            text-align: right;
-            margin-top: 20px;
-            font-size: 18px;
+        .quantity-controls {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
         }
 
-        .btn.btn-lg {
-            width: 100%;
-            margin-top: 20px;
-            background-color: #d13f65;
+        .quantity-controls button {
+            background: #d13f65;
             color: white;
-            border-radius: 6px;
-            padding: 14px 28px;
+            border: none;
+            padding: 2px 8px;
             font-size: 16px;
-            transition: background 0.3s ease;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: #d13f65;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 6px;
             text-decoration: none;
             display: inline-block;
+            font-size: 16px;
+            text-align: center;
+            transition: background 0.3s;
         }
 
-        .btn.btn-lg:hover {
+        .btn:hover {
             background-color: #b83255;
         }
 
-        button {
-            background-color: transparent;
-            border: none;
-            color: #d13f65;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            color: #b83255;
+        .cart-total {
+            text-align: end;
+            font-size: 18px;
+            margin-top: 20px;
         }
 
         .cart-footer {
+            margin-top: 20px;
+        }
+
+        .empty-cart {
             text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #388f06;
         }
     </style>
 </head>
 
 <body>
-
-    <!-- NAV -->
-    <header class="header">
-        <div class="container-fluid">
-            <div class="nav">
-                <a href="index.html" class="logo">
-                    <img src="./images/logo.png" alt="Logo">
-                </a>
-
-                <!-- Mobile Menu Toggle Button -->
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <i class='bx bx-menu'></i>
-                </button>
-
-                <!-- Navigation Menus -->
-                <nav class="main-nav" id="main-nav">
-                    <ul class="nav-menu menu-main">
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="shop.html">المتجر</a></li>
-                        <li><a href="product.html">المنتجات</a></li>
-                        <li><a href="blog.html">المدونة</a></li>
-                        <li><a href="about.html">معلومات عنا</a></li>
-                    </ul>
-                    <ul class="nav-menu nav-icons">
-                        <li><a href="#"><i class='bx bx-search'></i></a></li>
-                        <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
-                        <li><a href="#"><i class='bx bx-user'></i></a></li>
-                    </ul>
-                </nav>
-            </div>
+    <div class="nav-wrapper">
+        <div class="nav">
+            <a href="index.html" class="logo">
+                <img src="./images/logo.png" alt="شعار المتجر">
+            </a>
+            <div class="burger" onclick="toggleMenu()"><i class="bx bx-menu"></i></div>
+            <ul class="nav-menu menu-main" id="mainMenu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="product.html">المنتجات</a></li>
+                <li><a href="blog.html">المدونة</a></li>
+                <li><a href="about.html">معلومات عنا</a></li>
+            </ul>
+            <ul class="nav-menu" id="userMenu">
+                <li><a href="#" title="بحث"><i class="bx bx-search"></i></a></li>
+                <li><a href="cart.html" title="سلة المشتريات"><i class="bx bx-shopping-bag"></i></a></li>
+                <li><a href="#" title="حساب المستخدم"><i class="bx bx-user"></i></a></li>
+            </ul>
         </div>
-    </header>
-    <!-- END NAV -->
+    </div>
 
-    <!-- CART SECTION -->
     <div class="section">
         <div class="container-fluid">
             <h2 class="section-header"><span class="main-color">س</span>لة المشتريات</h2>
-            <div class="cart">
-                <div class="cart-header">
-                    <div class="col-4">المنتج</div>
-                    <div class="col-2">السعر</div>
-                    <div class="col-2">الكمية</div>
-                    <div class="col-2">الإجمالي</div>
-                    <div class="col-2">إزالة</div>
-                </div>
-                <div class="cart-body" id="cart-items">
-                    <!-- سيتم تعبئة العناصر من الجافاسكربت -->
-                </div>
+            <div class="cart" id="cart-wrapper">
+                
+                <div class="cart-body" id="cart-items"></div>
                 <div class="cart-footer">
                     <div class="cart-total">
                         <span>المجموع الكلي:</span>
                         <strong id="cart-total">$0.00</strong>
                     </div>
-                    <a href="checkout.html" class="btn btn-lg">إتمام الشراء</a>
+                    <a href="checkout.html" class="btn">إتمام الشراء</a>
                 </div>
             </div>
+            <div class="empty-cart" id="empty-cart" style="display: none;">سلة المشتريات فارغة</div>
         </div>
     </div>
-    <!-- END CART SECTION -->
 
     <script>
+        function toggleMenu() {
+            document.getElementById('mainMenu').classList.toggle('show');
+            document.getElementById('userMenu').classList.toggle('show');
+        }
+
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         const container = document.getElementById("cart-items");
+        const emptyCart = document.getElementById("empty-cart");
+        const cartWrapper = document.getElementById("cart-wrapper");
+
         let total = 0;
 
-        cartItems.forEach((item, index) => {
-            const subtotal = item.price * item.qty;
-            total += subtotal;
-            container.innerHTML += `
-                <div class="cart-item">
-                    <div class="col-4">${item.name}</div>
-                    <div class="col-2">$${item.price}</div>
-                    <div class="col-2">${item.qty}</div>
-                    <div class="col-2">$${subtotal}</div>
-                    <div class="col-2"><button onclick="removeItem(${index})">حذف</button></div>
-                </div>
-            `;
-        });
+        function updateCart() {
+            total = 0;
+            container.innerHTML = "";
+            if (cartItems.length === 0) {
+                cartWrapper.style.display = 'none';
+                emptyCart.style.display = 'block';
+                return;
+            } else {
+                cartWrapper.style.display = 'block';
+                emptyCart.style.display = 'none';
+            }
 
-        document.getElementById("cart-total").textContent = `$${total.toFixed(2)}`;
+            cartItems.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                container.innerHTML += `
+          <div class="cart-item">
+            <div class="col-4">
+              <img src="${item.image}" alt="${item.name}" />
+              <div>${item.name}</div>
+            </div>
+            <div class="col-2">$${item.price.toFixed(2)}</div>
+            <div class="col-2">
+              <div class="quantity-controls">
+                <button onclick="decreaseQty(${index})">-</button>
+                <span>${item.qty}</span>
+                <button onclick="increaseQty(${index})">+</button>
+              </div>
+            </div>
+            <div class="col-2">$${subtotal.toFixed(2)}</div>
+            <div class="col-2"><button onclick="removeItem(${index})">حذف</button></div>
+          </div>
+        `;
+            });
+
+            document.getElementById("cart-total").textContent = `$${total.toFixed(2)}`;
+        }
+
+        function increaseQty(index) {
+            cartItems[index].qty++;
+            saveAndReload();
+        }
+
+        function decreaseQty(index) {
+            if (cartItems[index].qty > 1) {
+                cartItems[index].qty--;
+                saveAndReload();
+            }
+        }
 
         function removeItem(index) {
             cartItems.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            location.reload();
+            saveAndReload();
         }
 
-        // Toggle mobile menu
-        document.querySelector('.menu-toggle').addEventListener('click', function () {
-            document.getElementById('main-nav').classList.toggle('active');
-        });
-    </script>
+        function saveAndReload() {
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCart();
+        }
 
+        updateCart();
+    </script>
+    <!-- FOOTER -->
+    <footer class="section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footer-content">
+                        <a href="#" class="logo">
+                            <img src="./images/logo.png" alt="">
+                        </a>
+                        <p class="text-gray">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, doloribus sit deleniti
+                            asperiores officiis odit animi, labore laboriosam sunt deserunt dolores molestias accusantium
+                            eius fugiat adipisci et repellendus nihil neque.
+                        </p>
+                        <p>
+                            47 Street, Vung Tau City, BR-VT
+                        </p>
+                        <p>
+                            solstore@mail.com
+                        </p>
+                        <div class="social-list">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footer-content">
+                        <div class="footer-content-header">
+                            categories
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#">categories</a>
+                            </li>
+                            <li>
+                                <a href="#">categories</a>
+                            </li>
+                            <li>
+                                <a href="#">categories</a>
+                            </li>
+                            <li>
+                                <a href="#">categories</a>
+                            </li>
+                            <li>
+                                <a href="#">categories</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+    </footer>
+    <!-- END FOOTER -->
+    
+    <!-- COPYRIGHT -->
+    <div class="copyright">
+        2021 SolStore Cosmetic - <a href="https://www.youtube.com/tuattrananh" target="_blank" rel="noopener">Tuat Tran
+            Anh</a>
+    </div>
+    <!-- END COPYRIGHT -->
+    
+    <!-- GLIDEJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+    <!-- THREEJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <!-- HOVER EFFECT -->
+    <script src="./js/hover-effect.umd.js"></script>
+    <!-- APP JS -->
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
